@@ -1,1 +1,0 @@
-desenhar_cubo;
