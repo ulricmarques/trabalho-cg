@@ -1,4 +1,4 @@
-function tronco = desenhar_tronco()
+function [tronco, faces] = desenhar_tronco()
   
   % vértices do tronco
   vertices = [0 0 0;

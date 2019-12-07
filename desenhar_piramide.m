@@ -1,4 +1,4 @@
-function piramide = desenhar_piramide()
+function [piramide, faces] = desenhar_piramide()
   
   % vértices da piramide
   vertices = [0 0 0;

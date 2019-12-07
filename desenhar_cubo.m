@@ -1,4 +1,4 @@
-function cubo = desenhar_cubo()
+function [cubo, faces] = desenhar_cubo()
   
   % vértices do cubo
   vertices = [1 1 0;
