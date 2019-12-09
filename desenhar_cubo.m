@@ -1,6 +1,6 @@
 function [cubo, faces] = desenhar_cubo()
   
-  % vértices do cubo
+  % vï¿½rtices do cubo
   vertices = [1 1 0;
               0 1 0;
               0 1 1;
@@ -20,7 +20,7 @@ function [cubo, faces] = desenhar_cubo()
  
   % tamanho em cada coordenada   
   X = 1.5;
-  Y = 1.5
+  Y = 1.5;
   Z = 1.5;
   
   % origem do cubo

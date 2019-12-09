@@ -1,6 +1,6 @@
 function [paralelepipedo, faces] = desenhar_paralelepipedo()
   
-  % vértices do paralelepipedo
+  % vï¿½rtices do paralelepipedo
   vertices = [1 1 0;
               0 1 0;
               0 1 1;
@@ -20,7 +20,7 @@ function [paralelepipedo, faces] = desenhar_paralelepipedo()
  
   % tamanho em cada coordenada   
   X = 1.5;
-  Y = 5.0
+  Y = 5.0;
   Z = 2.5;
   
   % origem do paralelepipedo
