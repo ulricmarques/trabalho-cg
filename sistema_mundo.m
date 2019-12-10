@@ -3,6 +3,7 @@ function [cubo_mundo,faces_cubo, ...
   paralelepipedo_mundo, faces_paralelepipedo, ...
   tronco_mundo, faces_tronco] = sistema_mundo()
 
+  % recebendo as coordenadas dos sólidos, cada um em seu SCO
   [vertices_cubo, faces_cubo] = desenhar_cubo();
   [vertices_piramide, faces_piramide] = desenhar_piramide();
   [vertices_paralelepipedo, faces_paralelepipedo] = desenhar_paralelepipedo();
