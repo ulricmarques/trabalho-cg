@@ -1,6 +1,6 @@
 function [piramide, faces] = desenhar_piramide()
   
-  % v�rtices da piramide
+  % vértices da piramide
   vertices = [0 0 0;
               0 1 0;
               1 1 0;
@@ -24,9 +24,15 @@ function [piramide, faces] = desenhar_piramide()
   CY = -Y/2;
   CZ = 0;
   
-  % matriz de rota��o
+  % matriz de rotação
   MR = [1 0 0; 0 cos(pi/4) -sin(pi/4); 0 sin(pi/4) cos(pi/4)];
-  piramide = [vertices(:,1)*X+CX,vertices(:,2)*Y+CY,vertices(:,3)*Z+CZ];
+  
+  % matriz de escala
+  ME = [2 0 0; 0 2 0; 0 0 3];
+
+  vertices = vertices * ME * MR;
+
+  piramide = [vertices(:,1)+CX,vertices(:,2)+CY,vertices(:,3)+CZ];
   
   patch('Faces',faces,'Vertices',piramide,'FaceColor','m');
 end

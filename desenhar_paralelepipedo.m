@@ -1,6 +1,6 @@
 function [paralelepipedo, faces] = desenhar_paralelepipedo()
   
-  % v�rtices do paralelepipedo
+  % vértices do paralelepipedo
   vertices = [1 1 0;
               0 1 0;
               0 1 1;

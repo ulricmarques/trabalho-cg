@@ -3,7 +3,7 @@ function [cubo_camera, faces_cubo, ...
   paralelepipedo_camera, faces_paralelepipedo, ...
   tronco_camera, faces_tronco] = sistema_camera()
   
-  % recebendo as coordenadas dos sólidos no SCM
+  % recebendo as coordenadas dos sï¿½lidos no SCM
   [cubo_mundo, faces_cubo, ...
   piramide_mundo, faces_piramide, ...
   paralelepipedo_mundo,faces_paralelepipedo, ...
@@ -11,10 +11,10 @@ function [cubo_camera, faces_cubo, ...
 
   clf % limpa a figura 
 
-  % origem da câmera escolhida
+  % origem da cï¿½mera escolhida
   origem_camera = [-5 -5 5];
 
-  % cálculo do centro do cubo e da pirâmide
+  % cï¿½lculo do centro do cubo e da pirï¿½mide
   centro_cubo = [(max(cubo_mundo(:, 1))+min(cubo_mundo(:, 1)))/2 ...
                  (max(cubo_mundo(:, 2))+min(cubo_mundo(:, 2)))/2 ...
                  (max(cubo_mundo(:, 3))+min(cubo_mundo(:, 3)))/2];
@@ -23,32 +23,32 @@ function [cubo_camera, faces_cubo, ...
                  (max(piramide_mundo(:, 2))+min(piramide_mundo(:, 2)))/2 ...
                  (max(piramide_mundo(:, 3))+min(piramide_mundo(:, 3)))/2];
 
-  % cálculo do ponto médio entre os centros do cubo e da pirâmide               
+  % cï¿½lculo do ponto mï¿½dio entre os centros do cubo e da pirï¿½mide               
   ponto_medio_centros = [(centro_cubo(1)+centro_piramide(1))/2 ...
                          (centro_cubo(2)+centro_piramide(2))/2 ...
                          (centro_cubo(3)+centro_piramide(3))/2 ]           
 
                          
-  % vetor normal, aqui chamado de w. um dos vetores que compõem a base do SCC                       
+  % vetor normal, aqui chamado de w. um dos vetores que compï¿½em a base do SCC                       
   camera_vetor_w = ponto_medio_centros - origem_camera;  
   
   vetor_auxiliar = [-10 5 2];
 
-  % vetor u, obtido ao fazer o produto vetorial entre o vetor w e um vetor auxiliar qualquer(não-colinear)
+  % vetor u, obtido ao fazer o produto vetorial entre o vetor w e um vetor auxiliar qualquer(nï¿½o-colinear)
   camera_vetor_u = cross(camera_vetor_w, vetor_auxiliar);
 
   % vetor v, obtido ao fazer o produto vetorial entre w e u.
   camera_vetor_v = cross(camera_vetor_w, camera_vetor_u);
 
-  % tranformando em vetores unitários         
+  % tranformando em vetores unitï¿½rios         
   camera_vetor_w = camera_vetor_w / (sqrt(dot(camera_vetor_w, camera_vetor_w))); 
   camera_vetor_u = camera_vetor_u / (sqrt(dot(camera_vetor_u, camera_vetor_u)));
   camera_vetor_v = camera_vetor_v / (sqrt(dot(camera_vetor_v, camera_vetor_v)));
 
-  % formando a base vetorial do SCC com os três vetores ortonormais calculados
+  % formando a base vetorial do SCC com os trï¿½s vetores ortonormais calculados
   base_camera = [camera_vetor_u; camera_vetor_v; camera_vetor_w];
   
-  % cálculo das novas coordenadas dos sólidos após a mudança de base
+  % cï¿½lculo das novas coordenadas dos sï¿½lidos apï¿½s a mudanï¿½a de base
   cubo_camera = cubo_mundo * inv(base_camera);
   piramide_camera = piramide_mundo * inv(base_camera);
   paralelepipedo_camera = paralelepipedo_mundo * inv(base_camera);

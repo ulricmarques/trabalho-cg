@@ -1,6 +1,6 @@
 function [cubo, faces] = desenhar_cubo()
   
-  % v�rtices do cubo
+  % vértices do cubo
   vertices = [1 1 0;
               0 1 0;
               0 1 1;
