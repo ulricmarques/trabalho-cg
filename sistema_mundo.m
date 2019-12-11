@@ -3,19 +3,20 @@ function [cubo_mundo,faces_cubo, ...
   paralelepipedo_mundo, faces_paralelepipedo, ...
   tronco_mundo, faces_tronco] = sistema_mundo()
 
-  % recebendo as coordenadas dos s�lidos, cada um em seu SCO
+  % recebendo as coordenadas dos sólidos, cada um em seu SCO
   [vertices_cubo, faces_cubo] = desenhar_cubo();
   [vertices_piramide, faces_piramide] = desenhar_piramide();
   [vertices_paralelepipedo, faces_paralelepipedo] = desenhar_paralelepipedo();
   [vertices_tronco, faces_tronco] = desenhar_tronco();
 
-  clf % limpa a figura 
-
+  % limpa a figura anterior
+  clf; 
+  
   % mostra o cubo no sistema de coordenadas do mundo
   cubo_mundo = [vertices_cubo(:,1)+5,vertices_cubo(:,2)+5,vertices_cubo(:,3)+5];
   patch('Faces',faces_cubo,'Vertices',cubo_mundo,'FaceColor','b');
 
-  % mostra a pir�mide no sistema de coordenadas do mundo
+  % mostra a pirâmide no sistema de coordenadas do mundo
   piramide_mundo = [vertices_piramide(:,1)+10,vertices_piramide(:,2)+10,vertices_piramide(:,3)+10];
   patch('Faces',faces_piramide,'Vertices',piramide_mundo,'FaceColor','m');
 

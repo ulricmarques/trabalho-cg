@@ -1,13 +1,13 @@
 function [piramide, faces] = desenhar_piramide()
   
-  % vértices da piramide
+  % vértices da pirâmide
   vertices = [0 0 0;
               0 1 0;
               1 1 0;
               1 0 0;
               0.5 0.5 1];
 
-  % faces da piramide
+  % faces da pirâmide
   faces = [1 2 3 4;
            1 5 2 1;
            2 5 3 2;
@@ -19,7 +19,7 @@ function [piramide, faces] = desenhar_piramide()
   Y = 2;
   Z = 3;
   
-  % origem da piramide
+  % origem da pirâmide
   CX = -X/2;
   CY = -Y/2;
   CZ = 0;
@@ -33,6 +33,5 @@ function [piramide, faces] = desenhar_piramide()
   vertices = vertices * ME * MR;
 
   piramide = [vertices(:,1)+CX,vertices(:,2)+CY,vertices(:,3)+CZ];
-  
   patch('Faces',faces,'Vertices',piramide,'FaceColor','m');
 end
