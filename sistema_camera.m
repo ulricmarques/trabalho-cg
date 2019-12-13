@@ -33,7 +33,7 @@ function [cubo_camera, faces_cubo, ...
   % vetor normal, aqui chamado de w. um dos vetores que compõem a base do SCC                       
   camera_vetor_w = ponto_medio_centros - origem_camera;  
   
-  vetor_auxiliar = [-10 5 2];
+  vetor_auxiliar = [10 15 1];
 
   % vetor u, obtido ao fazer o produto vetorial entre o vetor w e um vetor auxiliar qualquer(não-colinear)
   camera_vetor_u = cross(camera_vetor_w, vetor_auxiliar);
@@ -47,7 +47,7 @@ function [cubo_camera, faces_cubo, ...
   camera_vetor_v = camera_vetor_v / (sqrt(dot(camera_vetor_v, camera_vetor_v)));
 
   % formando a base vetorial do SCC com os três vetores ortonormais calculados
-  base_camera = [camera_vetor_u; camera_vetor_v; camera_vetor_w];
+  base_camera = [camera_vetor_w; camera_vetor_u; camera_vetor_v];
   
   % cálculo das novas coordenadas dos sólidos após a mudança de base
   cubo_camera = cubo_mundo * inv(base_camera);
